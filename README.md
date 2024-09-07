@@ -1,50 +1,66 @@
-# React + TypeScript + Vite
+# Tic Tac Toe Game
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a simple Tic Tac Toe game built using React and TypeScript. It allows two players to play the game, track their moves, and determine the winner or if the game ends in a draw.
 
-Currently, two official plugins are available:
+## Table of Contents
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+-   [Features](#features)
+-   [Installation](#installation)
+-   [Usage](#usage)
+-   [Project Structure](#project-structure)
+-   [Contributing](#contributing)
+-   [License](#license)
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+-   Two-player Tic Tac Toe game
+-   Editable player names
+-   Highlights the active player
+-   Displays the winner or a draw message
+-   Logs all moves made during the game
+-   Option to restart the game
 
-- Configure the top-level `parserOptions` property like this:
+## Installation
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+1. **Clone the Repository:**
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+    ```bash
+    git clone <repository-url>
+    cd <repository-directory>
+    ```
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+2. **Install Dependencies:**
+    ```bash
+    npm install
+    ```
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## Usage
+
+1. **Start the Development Server:**
+
+    ```bash
+    npm start
+    ```
+
+2. **Open the Application:**
+   Open your browser and navigate to `http://localhost:3000` to see the Tic Tac Toe game in action.
+
+### Key Components and Files
+
+-   **`src/components/GameBoard.tsx`**: Renders the game board and handles square selection.
+-   **`src/components/GameOver.tsx`**: Displays the game over message and restart button.
+-   **`src/components/Player.tsx`**: Manages player names and highlights the active player.
+-   **`src/components/Log.tsx`**: Logs the moves made by players.
+-   **`src/gameTurns.model.ts`**: Defines the game turn model.
+-   **`src/winning-combinations.ts`**: Contains the winning combinations for the game.
+-   **`src/App.tsx`**: The main component that ties everything together.
+-   **`src/main.tsx`**: Entry point of the application.
+-   **`public/index.html`**: The HTML template for the application.
+
+## Contributing
+
+Contributions are welcome! Please open an issue or submit a pull request for any improvements or bug fixes.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
